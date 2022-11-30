@@ -1,0 +1,29 @@
+{% extends 'userApp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <div class="alert alert-info">
+      <strong><h2>  {{post.title}}</h2></strong>
+    </div>
+    <p>{{post.content}}</p>
+<br>
+<h4>by {{post.author}} on {{post.date1}}</h4>
+
+{%  if post.author == user %}
+<a href="{% url 'update' post.id  %}">Update_post</a>
+<a href="{% url 'delete' post.id  %}">Delete_post</a>
+{% endif %}
+   
+{% for comment in comments %}
+
+ {{comment.create_date}} by {{comment.name}}
+
+ <p> {{comment.email}}</p>
+{% endfor %}
+<a class ="btn btn-primary" href ="{% url 'comment' post.id %}">PostComment</a></button>
+
+</div>
+
+{% endblock %}

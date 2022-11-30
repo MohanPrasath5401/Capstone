@@ -1,0 +1,20 @@
+{% extends 'userApp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    {% for each_post in posts %}
+    <div class="alert alert-info">
+      <strong><h2>  {{each_post.title}}</h2></strong>
+    </div>
+    <p>{{each_post.content|truncatewords:50|linebreaks}}</p>
+<br>
+<h4>by {{each_post.author}} on {{each_post.date1}}</h4>
+
+<a href="{% url 'sppost' each_post.id %}">See more</a>
+
+{% endfor %}
+</div>
+
+{% endblock %}

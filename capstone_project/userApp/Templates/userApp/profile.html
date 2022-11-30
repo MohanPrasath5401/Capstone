@@ -1,0 +1,27 @@
+{% extends 'userApp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="alert alert-info">
+      
+      <strong><h2>  {{legend}}</h2></strong>
+    </div>
+
+    <h1> Hello {{user.username}}</h1>
+        
+        <h1>{{Profile1.object.mobile}}</h1>
+         <h1>{{user.email}}</h1>
+         <h1>{{profile1.object.mobile}}</h1>
+         <h1>{{p_form.object.mobile}}</h1>
+         <h1>{{p_form.mobile}}</h1>
+         <h1>{{object.mobile}}</h1>
+         <h1>{{Profile1.mobile}}</h1>
+         
+        
+
+        
+</div>
+{% endblock %}

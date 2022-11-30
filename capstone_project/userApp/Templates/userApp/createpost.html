@@ -1,0 +1,20 @@
+{% extends 'userApp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="alert alert-info">
+      <strong><h2>  {{legend}}</h2></strong>
+    </div>
+
+<form action="" method="POST"><div>
+    {% csrf_token %}
+    {{form|crispy}}
+
+<input type="Submit" value="submit">
+
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'userApp/base.html'%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+        
+<div class="alert alert-info">
+
+  <strong><h2>Logout Successfully</h2></strong> 
+</div>
+
+<h1> <a href="{% url 'login' %}">Login Again</a></h1>
+
+
+ </div>
+
+</div>
+  
+{% endblock %}
